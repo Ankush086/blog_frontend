@@ -1,0 +1,28 @@
+.header__main {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(41, 9, 121, 0.9108018207282913) 53%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+.user-validation button {
+  color: wheat;
+  margin: 1px;
+  border-radius: 10px;
+}
+
+.user-validation {
+  display: flex;
+  margin-left: auto;
+}
+
+.header__blogs__links__tabs {
+  color: inherit;
+}
+
+.header__blogs__links {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}

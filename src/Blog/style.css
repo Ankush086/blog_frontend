@@ -1,0 +1,31 @@
+.card__main {
+  /* max-width: 345px; */
+  margin: auto;
+  width: 40%;
+  margin-top: 2%;
+  padding: 2%;
+  box-shadow: 5px 5px 10px #ccc;
+}
+
+.card__main:hover {
+  box-shadow: 10px 10px 20px #ccc;
+}
+.card__avatar {
+  background-color: hsl(0, 100%, 40%);
+}
+
+.card__Media {
+  height: 194px;
+}
+
+.card__edit {
+  display: flex;
+  /* margin-left: auto; */
+  margin-right: auto;
+}
+.card__edit__button {
+  margin-left: auto;
+}
+.btn {
+  color: hsl(0, 100%, 42%);
+}

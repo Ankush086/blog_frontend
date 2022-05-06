@@ -1,0 +1,31 @@
+.add__blog__box {
+  border: 3px solid gray;
+  border-radius: 15px;
+  box-shadow: 10px 10px 20px #ccc;
+  padding: 3%;
+  margin: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.add__blog__heading {
+  font-weight: bold;
+  padding: 3%;
+  color: gray;
+  text-align: center;
+}
+
+.add__blog__inputlabel {
+  margin-bottom: 1%;
+  margin-top: 2%;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.add__button {
+  margin-top: 2%;
+  border-radius: 4px;
+}

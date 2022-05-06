@@ -1,0 +1,27 @@
+.validation__box {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 10px 20px #ccc;
+  padding: 3%;
+  margin: auto;
+  margin-top: 5%;
+  border-radius: 5%;
+}
+
+.validation__box .input__textfield {
+  text-align: center;
+  padding: 3%;
+}
+
+.validation__box .validation__button {
+  border-radius: 3%;
+  color: #cc3300;
+  margin-top: 13px;
+}
+
+.validation__button__btn2 {
+  margin-top: 13px;
+}
