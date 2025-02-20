@@ -8,7 +8,7 @@ function BlogDetail() {
   const navigate = useNavigate();
   const [blog, setBlog] = useState();
   const [inputs, setInputs] = useState({});
-  const id = useParams();
+  const id = useParams().id;
 
   const handleChange = (e) => {
     setInputs((prevstate) => ({
@@ -32,7 +32,7 @@ function BlogDetail() {
         description: data.blog.description,
       });
     });
-  }, [id]);
+  }, [fetchDetails, id]);
 
   const sendRequest = async () => {
     const res = await axios
