@@ -26,7 +26,7 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path="/auth" element={<Auth />} />
+          <Route path="/" element={<Auth />} />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/add" element={<AddBlog />} />
           <Route path="/myblogs" element={<UserBlog />} />
