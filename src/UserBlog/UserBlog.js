@@ -13,8 +13,8 @@ function UserBlog() {
   };
 
   useEffect(() => {
-    sendRequest().then((data) => setUser(data.user));
-  }, [sendRequest]);
+    sendRequest();
+  }, []);
   console.log(user);
   return (
     <>

@@ -32,7 +32,7 @@ function BlogDetail() {
         description: data.blog.description,
       });
     });
-  }, [fetchDetails, id]);
+  }, []);
 
   const sendRequest = async () => {
     const res = await axios
