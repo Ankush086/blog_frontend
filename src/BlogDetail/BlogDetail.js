@@ -24,15 +24,15 @@ function BlogDetail() {
     return data;
   };
 
-  useEffect(() => {
-    fetchDetails().then((data) => {
-      setBlog(data.blog);
-      setInputs({
-        title: data.blog.title,
-        description: data.blog.description,
-      });
-    });
-  }, []);
+  // useEffect(() => {
+  //   fetchDetails().then((data) => {
+  //     setBlog(data.blog);
+  //     setInputs({
+  //       title: data.blog.title,
+  //       description: data.blog.description,
+  //     });
+  //   });
+  // }, []);
 
   const sendRequest = async () => {
     const res = await axios

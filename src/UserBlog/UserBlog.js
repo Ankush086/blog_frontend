@@ -12,10 +12,10 @@ function UserBlog() {
     return data;
   };
 
-  useEffect(() => {
-    sendRequest();
-  }, []);
-  console.log(user);
+  // useEffect(() => {
+  //   sendRequest();
+  // }, []);
+  // console.log(user);
   return (
     <>
       {user &&
