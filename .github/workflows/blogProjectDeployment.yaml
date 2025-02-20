@@ -64,3 +64,6 @@ jobs:
         uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
         with:
           token: ${{secrets.GITHUB_TOKEN}}
+      - name: Show deployment URL
+        run: |
+          echo "Pages URL: ${{ steps.deployment.outputs.page_url }}"
