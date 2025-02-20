@@ -65,5 +65,4 @@ jobs:
         with:
           token: ${{secrets.GITHUB_TOKEN}}
       - name: Show deployment URL
-        run: |
-          echo "Pages URL: ${{ steps.deployment.outputs.page_url }}"
+        run: echo "https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}"
