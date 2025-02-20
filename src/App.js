@@ -9,6 +9,7 @@ import BlogDetail from "./BlogDetail/BlogDetail";
 import AddBlog from "./AddBlog/AddBlog";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "./store";
+import StartFile from "./StartFile/index";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function App() {
       </header>
       <main>
         <Routes>
+        <Route path="/" element={<StartFile />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/add" element={<AddBlog />} />
