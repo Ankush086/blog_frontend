@@ -8,7 +8,7 @@ function BlogDetail() {
   const navigate = useNavigate();
   const [blog, setBlog] = useState();
   const [inputs, setInputs] = useState({});
-  const id = useParams().id;
+  const id = useParams();
 
   const handleChange = (e) => {
     setInputs((prevstate) => ({
