@@ -1,0 +1,66 @@
+name: "Deployment"
+# on: [push, workflow_dispatch]
+on:
+  push:
+    branches:
+      - master
+      - "feature/**"
+    paths-ignore:
+      - ".github/workflows"
+  workflow_dispatch:
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Get Code"
+        uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Deps
+        run: npm ci
+  build:
+    needs: tests
+    runs-on: ubuntu-latest
+    env:
+      CI: false
+    steps:
+      - name: "Get Code"
+        uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Deps
+        run: npm ci
+      - name: Build Project
+        run: npm run build
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages
+          path: build
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+    env:
+      CI: false
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
