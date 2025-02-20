@@ -5,7 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Get Code"
-        run: |
-          echo "cloning repo"
-          echo "${{toJson(github)}}"
-          echo clone "https://github.com/${{github.repository}}.git"
+        uses: actions/checkout@v4
+      - name: Install Deps
+        run: npm ci
