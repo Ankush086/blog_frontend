@@ -6,5 +6,23 @@ jobs:
     steps:
       - name: "Get Code"
         uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
       - name: Install Deps
         run: npm ci
+  deployment:
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Get Code"
+        uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Install Deps
+        run: npm ci
+      - name: Build Project
+        run: npm run build
